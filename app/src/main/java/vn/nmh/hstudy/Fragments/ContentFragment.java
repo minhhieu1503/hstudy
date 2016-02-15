@@ -1,4 +1,4 @@
-package vn.nmh.hstudy.Fragments;
+package vn.nmh.hstudy.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

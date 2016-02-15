@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import vn.nmh.hstudy.Fragments.ContentFragment;
-import vn.nmh.hstudy.Fragments.GrammerFragment;
-import vn.nmh.hstudy.Fragments.PracticeFragment;
-import vn.nmh.hstudy.Fragments.VocabularyFragment;
+import vn.nmh.hstudy.fragments.ContentFragment;
+import vn.nmh.hstudy.fragments.GrammerFragment;
+import vn.nmh.hstudy.fragments.PracticeFragment;
+import vn.nmh.hstudy.fragments.VocabularyFragment;
 
 public class HomeFragment extends Fragment implements View.OnClickListener{
 	private Button mBtnVocabulary, mBtnPractice, mBtnContent, mBtnGrammer;

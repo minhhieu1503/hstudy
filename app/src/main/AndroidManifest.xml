@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="vn.nmh.hstudy" >
 
-    <application
+    <application android:name="com.activeandroid.app.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- config database -->
+        <meta-data android:name="AA_DB_NAME" android:value="Test.db" />
+        <meta-data android:name="AA_DB_VERSION" android:value="1" />
+        <meta-data android:name="AA_MODLES" android:value="vn.nmh.hstudy.mmodels.Items, vn.nmh.hstudy.mmodels.Category"/>
     </application>
 
 </manifest>

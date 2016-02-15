@@ -1,4 +1,4 @@
-package vn.nmh.hstudy.Utils;
+package vn.nmh.hstudy.utils;
 
 import android.os.SystemClock;
 import android.view.View;
