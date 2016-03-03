@@ -30,4 +30,6 @@ public class ContentFragment extends Fragment {
 	public void onDetach() {
 		super.onDetach();
 	}
+
+
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +16,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener{
 	private Toolbar mToolbar;
 	private FragmentDrawer drawerFragment;
+	private DrawerLayout mDrawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +28,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         
         drawerFragment = (FragmentDrawer)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
-        drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerFragment.setUp(R.id.fragment_navigation_drawer, mDrawerLayout, mToolbar);
         drawerFragment.setDrawerListener(this);
         displayView(0);
     }
@@ -55,6 +58,15 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 		// TODO Auto-generated method stub
 		displayView(position);
 		
+	}
+
+	@Override
+	public void onBackPressed() {
+		if(mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+			mDrawerLayout.closeDrawers();
+			return;
+		}
+		super.onBackPressed();
 	}
 	
 	 private void displayView(int position) {
